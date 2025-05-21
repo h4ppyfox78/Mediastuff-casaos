@@ -39,12 +39,12 @@ x-casaos:
     architectures:
         - amd64
     author: Gerbera
-    category: media
+    category: mediastuff
     description:
         en_us: ""
     developer: unknown
     icon: ""
-    image: null
+    image: gerbera/gerbera:latest
     main: gerbera
     port_map: "49494"
     scheme: http
