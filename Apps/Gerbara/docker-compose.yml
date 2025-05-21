@@ -1,0 +1,57 @@
+name: Gerbera
+services:
+    Gerbera:
+        cap_add:
+            - AUDIT_WRITE
+            - CHOWN
+            - DAC_OVERRIDE
+            - FOWNER
+            - FSETID
+            - KILL
+            - MKNOD
+            - NET_BIND_SERVICE
+            - NET_RAW
+            - SETFCAP
+            - SETGID
+            - SETPCAP
+            - SETUID
+            - SYS_CHROOT
+        command:
+            - /bin/sh
+            - -c
+            - gerbera --port ${IMAGE_PORT} --config /var/run/gerbera/config.xml
+        environment:
+            IMAGE_PORT: "49494"
+            PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+        image: gerbera/gerbera:latest
+        network_mode: bridge
+        restart: "no"
+        x-casaos:
+            envs:
+                - container: PATH
+                  description:
+                    en_us: ""
+                - container: IMAGE_PORT
+                  description:
+                    en_us: ""
+            image: ""
+x-casaos:
+    architectures:
+        - amd64
+    author: Gerbera
+    category: media
+    description:
+        en_us: ""
+    developer: unknown
+    icon: ""
+    image: null
+    main: gerbera
+    port_map: "49494"
+    scheme: http
+    tagline:
+        en_us: gerbera
+    thumbnail: ""
+    tips:
+        after_installed: if you installed this you need to go to propeties then console and logs then logs the ip schould be there! 
+    title:
+        en_us: gerbera

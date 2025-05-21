@@ -1,0 +1,86 @@
+{
+	"version": "2.5",
+	"title": "Gerbera",
+	"name": "gerbera",
+	"icon": "https://www.gravatar.com/avatar/a720892b0655a687adb3d59966551db4?s=120&r=g&d=404",
+	"tagline": "a media player for upnp",
+	"overview": "gerbera is a tool for upnp streaming you might not be able to change config but no password needed or user easy to configure!",
+	"thumbnail": "https://github.com/h4ppyfox78/Mediastuff-casaos/blob/main/image.png?raw=true",
+	"screenshots": [
+	],
+	"category": [
+		"Utilities"
+	],
+	"developer": {
+		"name": "gerbera",
+		"website": "https://demo.2fauth.app",
+		"donate_text": "",
+		"donate_link": ""
+	},
+	"adaptor": {
+		"name": "CasaOS Team",
+		"website": "https://www.casaos.io",
+		"donate_text": "",
+		"donate_link": ""
+	},
+	"support": "",
+	"website": "",
+	"container": {
+		"image": "gerbera/gerbera:latest",
+		"shell": "sh",
+		"privileged": false,
+		"network_model": "bridge",
+		"web_ui": {
+			"http": "$AppIP49494",
+			"path": "/"
+		},
+		"health_check": "",
+		"envs": [],
+		"ports": [
+			{
+				"container": "gerbera",
+				"host": "49494",
+				"type": "tcp",
+				"allocation": "automatic",
+				"configurable": "yes",
+				"description": ""
+			}
+		],
+		"volumes": [
+			{
+				"container": "/",
+				"host": "/DATA/AppData/$AppID",
+				"mode": "rw",
+				"allocation": "automatic",
+				"configurable": "no",
+				"description": ""
+			}
+		],
+		"devices": [],
+		"constraints": {
+			"min_memory": 64,
+			"min_storage": 128
+		},
+		"restart_policy": "always",
+		"sysctls": [],
+		"cap_add": [],
+		"labels": [],
+		"host_name": "",
+		"cmd": []
+	},
+	"abilities": {
+		"notification": false,
+		"widgets": false,
+		"authentication": false,
+		"search": false,
+		"upnp": false
+	},
+	"tips": {
+		"before_install": []
+	},
+	"changelog": {
+		"latest_updates": "",
+		"url": ""
+	},
+	"latest_update_date": ""
+}
